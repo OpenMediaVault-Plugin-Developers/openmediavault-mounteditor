@@ -28,6 +28,9 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('list');
         $this->registerMethod('get');
         $this->registerMethod('set');
+
+        $this->registerMethod('addQuota');
+        $this->registerMethod('removeQuota');
     }
 
     public function list($params, $context)
@@ -68,7 +71,53 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $opts = explode(',', $params['opts']);
         $optst = array_map('trim', $opts);
         $optsu = array_unique($optst);
-        $object->set('opts', implode(',', array_filter($optsu)));
+        $optsf = implode(',', array_filter($optsu));
+        if (strlen($optsf) < 1) {
+            throw new \OMV\Exception( gettext("The mount must have at least one mount option!"));
+        }
+        $object->set('opts', $optsf);
+        $db->set($object);
+        // Return the configuration object.
+        return $object->getAssoc();
+    }
+
+    public function addQuota($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
+        $opts = explode(',', $object->get('opts'));
+        $optst = array_map('trim', $opts);
+        $optadd = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
+        $optsm = array_merge($optst, $optadd);
+        $optsu = array_unique($optsm);
+        $optsf = implode(',', array_filter($optsu));
+        if (strlen($optsf) < 1) {
+            throw new \OMV\Exception( gettext("The mount must have at least one mount option!"));
+        }
+        $object->set('opts', $optsf);
+        $db->set($object);
+        // Return the configuration object.
+        return $object->getAssoc();
+    }
+
+    public function removeQuota($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
+        $opts = explode(',', $object->get('opts'));
+        $optst = array_map('trim', $opts);
+        $optsu = array_unique($optst);
+        $optremove = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
+        $optsd = array_diff($optsu, $optremove);
+        $optsf = implode(',', array_filter($optsd));
+        if (strlen($optsf) < 1) {
+            throw new \OMV\Exception( gettext("The mount must have at least one mount option!"));
+        }
+        $object->set('opts', $optsf);
         $db->set($object);
         // Return the configuration object.
         return $object->getAssoc();

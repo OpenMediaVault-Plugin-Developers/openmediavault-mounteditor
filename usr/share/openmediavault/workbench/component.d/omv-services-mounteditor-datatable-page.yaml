@@ -41,3 +41,41 @@ data:
         execute:
           type: url
           url: "/services/mounteditor/edit/{{ _selected[0].uuid }}"
+      - type: iconButton
+        icon: mdi:playlist-plus
+        tooltip: _("Add quota options")
+        execute:
+          type: request
+          request:
+            service: MountEditor
+            method: addQuota
+            params:
+              uuid: "{{ _selected[0].uuid }}"
+            progressMessage: _("Adding quota options ...")
+            successNotification: _("Quota options have been added.")
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+          constraint:
+            - operator: ne
+              arg0:
+                prop: type
+              arg1: "btrfs"
+      - type: iconButton
+        icon: mdi:playlist-minus
+        tooltip: _("Remove quota options")
+        confirmationDialogConfig:
+          template: confirmation-danger
+          message: _("Are you sure you want to remove quota options?")
+        execute:
+          type: request
+          request:
+            service: MountEditor
+            method: removeQuota
+            params:
+              uuid: "{{ _selected[0].uuid }}"
+            progressMessage: _("Removing quota options ...")
+            successNotification: _("Quota options have been removed.")
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1

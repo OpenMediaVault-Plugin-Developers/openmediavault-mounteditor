@@ -15,7 +15,7 @@ data:
     fields:
       - type: hint
         hintType: info
-        text: "Be very careful removing or changing options.<br/>Bad options could cause the filesystem to not mount or data loss!"
+        text: _("Be very careful removing or changing options.<br/>Bad options could cause the filesystem to not mount or data loss!<br/>A reboot will be necessary to apply new mount options.")
       - type: confObjUuid
       - type: textInput
         name: dir
@@ -27,6 +27,9 @@ data:
         hint: _("It is recommended to leave defaults,nofail as the first options.")
     buttons:
       - template: submit
+        confirmationDialogConfig:
+          template: confirmation
+          message: _("Are you sure you want to change the mount options?")
         execute:
           type: url
           url: "/services/mounteditor"
