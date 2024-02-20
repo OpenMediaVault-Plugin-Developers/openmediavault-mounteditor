@@ -15,7 +15,7 @@ data:
     fields:
       - type: hint
         hintType: info
-        text: _("Be very careful removing or changing options.<br/>Bad options could cause the filesystem to not mount or data loss!<br/>A reboot will be necessary to apply new mount options.")
+        text: _("Be very careful removing or changing options.<br/>These options are not the live options but what is stored in the database.<br/>Bad options could cause the filesystem to not mount or data loss!<br/>A reboot will be necessary to apply new mount options.")
       - type: confObjUuid
       - type: textInput
         name: dir
