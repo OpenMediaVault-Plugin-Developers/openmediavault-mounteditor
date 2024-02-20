@@ -1,0 +1,36 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-mounteditor-form-page
+  type: formPage
+  config:
+    request:
+      service: MountEditor
+      get:
+        method: get
+        params:
+          uuid: "{{ _routeParams.uuid }}"
+      post:
+        method: set
+    fields:
+      - type: hint
+        hintType: info
+        text: "Be very careful removing or changing options.<br/>Bad options could cause the filesystem to not mount or data loss!"
+      - type: confObjUuid
+      - type: textInput
+        name: dir
+        label: _("Mount point")
+        readonly: true
+      - type: textInput
+        name: opts
+        label: _("Mount options")
+        hint: _("It is recommended to leave defaults,nofail as the first options.")
+    buttons:
+      - template: submit
+        execute:
+          type: url
+          url: "/services/mounteditor"
+      - template: cancel
+        execute:
+          type: url
+          url: "/services/mounteditor"

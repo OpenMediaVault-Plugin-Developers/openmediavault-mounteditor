@@ -1,0 +1,7 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.mounteditor"
+  text: _("Mount Editor")
+  icon: "mdi:playlist-edit"
+  url: "/services/mounteditor"

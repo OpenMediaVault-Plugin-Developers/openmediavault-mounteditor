@@ -1,0 +1,43 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-mounteditor-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    hasSearchField: true
+    stateId: eb100dfc-cf26-11ee-9a3a-0bd674c8fdf5
+    sorters:
+      - dir: asc
+        prop: source
+    store:
+      proxy:
+        service: MountEditor
+        get:
+          method: list
+    columns:
+      - name: _('Mount Point')
+        prop: dir
+        flexGrow: 3
+        sortable: true
+      - name: _('Mount Options')
+        prop: opts
+        flexGrow: 4
+        sortable: true
+      - name: _('Type')
+        prop: type
+        flexGrow: 1
+        sortable: true
+        cellTemplateName: chip
+        cellTemplateConfig:
+          template: '{{ type | upper }}'
+      - name: _('Comment')
+        prop: comment
+        flexGrow: 1
+        sortable: true
+        hidden: true
+    actions:
+      - template: edit
+        execute:
+          type: url
+          url: "/services/mounteditor/edit/{{ _selected[0].uuid }}"

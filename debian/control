@@ -1,0 +1,15 @@
+Source: openmediavault-mounteditor
+Section: net
+XB-Plugin-Section: filesystems
+Priority: optional
+Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
+Build-Depends: debhelper (>= 13)
+Standards-Version: 4.3.0
+Homepage: http://omv-extras.org/
+
+Package: openmediavault-mounteditor
+Architecture: all
+Depends: openmediavault (>= 7),
+         ${misc:Depends}
+Description: openmediavault mount editor plugin
+ Allow editing of filesystem mount options.

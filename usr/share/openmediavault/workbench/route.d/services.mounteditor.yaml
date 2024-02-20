@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/mounteditor"
+  title: _("Mount Editor")
+  component: omv-services-mounteditor-datatable-page
