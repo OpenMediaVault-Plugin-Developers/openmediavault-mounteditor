@@ -42,9 +42,28 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
         $objects = $db->getByFilterAssoc('conf.system.filesystem.mountpoint', [
-            'operator' => 'stringNotEquals',
-            'arg0' => 'hidden',
-            'arg1' => '1'
+            "operator" => "and",
+            "arg0" => [
+                'operator' => 'stringNotEquals',
+                'arg0' => 'hidden',
+                'arg1' => '1'
+            ],
+            "arg1" => [
+                "operator" => "not",
+                "arg0" => [
+                    "operator" => "or",
+                    "arg0" => [
+                        "operator" => "stringContains",
+                        "arg0" => "opts",
+                        "arg1" => "bind"
+                    ],
+                    "arg1" => [
+                        "operator" => "stringContains",
+                        "arg0" => "opts",
+                        "arg1" => "loop"
+                    ]
+                ]
+            ]
         ]);
         // Filter the result.
         return $this->applyFilter($objects, $params['start'], $params['limit'],
