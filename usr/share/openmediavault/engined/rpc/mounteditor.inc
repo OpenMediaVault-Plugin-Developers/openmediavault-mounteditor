@@ -111,10 +111,13 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $opts = explode(',', $object->get('opts'));
         $optst = array_map('trim', $opts);
         switch ($object->get('type')) {
+            case 'ext3':
             case 'ext4':
+            case 'f2fs':
                 $optadd = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
                 break;
             case 'xfs':
+            case 'jfs':
                 $optadd = ['usrquota', 'grpquota'];
                 break;
         }
