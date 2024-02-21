@@ -79,3 +79,20 @@ data:
         enabledConstraints:
           minSelected: 1
           maxSelected: 1
+      - type: iconButton
+        icon: mdi:file-document-outline
+        tooltip: _("Live options")
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+        execute:
+          type: taskDialog
+          taskDialog:
+            config:
+              title: _("Live options")
+              startOnInit: true
+              request:
+                service: MountEditor
+                method: show
+                params:
+                  uuid: "{{ _selected[0].uuid }}"

@@ -31,6 +31,8 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
 
         $this->registerMethod('addQuota');
         $this->registerMethod('removeQuota');
+
+        $this->registerMethod('show');
     }
 
     public function list($params, $context)
@@ -148,5 +150,37 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $db->set($object);
         // Return the configuration object.
         return $object->getAssoc();
+    }
+
+    public function show($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
+        return $this->execBgProc(function($bgStatusFilename, $bgOutputFilename)
+            use ($object) {
+                $msg = gettext("NOTE: Live options will typically not match because some options are expanded when mounted.");
+                $msg .= PHP_EOL . PHP_EOL;
+                file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
+                $msg = gettext("Current database options:");
+                $msg .= PHP_EOL . '  ' . $object->get("opts") . PHP_EOL . PHP_EOL;
+                file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
+                $msg = gettext("Live options:");
+                $msg .= PHP_EOL . '  ';
+                file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
+                $cmdArgs = [];
+                $cmdArgs[] = 'awk';
+                $cmdArgs[] = sprintf('\'$2=="%s" { print $4 }\'', $object->get('dir'));
+                $cmdArgs[] = '/proc/mounts';
+                $cmd = new \OMV\System\Process($cmdArgs);
+                $cmd->setRedirect2to1();
+                $cmdLine = $cmd->getCommandLine();
+                if (0 !== $this->exec($cmdLine, $output, $bgOutputFilename)) {
+                    throw new \OMV\ExecException($cmdLine, $output);
+                }
+                return $output;
+            }
+        );
     }
 }
