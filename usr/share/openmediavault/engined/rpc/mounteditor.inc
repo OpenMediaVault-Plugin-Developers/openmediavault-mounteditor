@@ -108,7 +108,14 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
         $opts = explode(',', $object->get('opts'));
         $optst = array_map('trim', $opts);
-        $optadd = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
+        switch ($object->get('type')) {
+            case 'ext4':
+                $optadd = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
+                break;
+            case 'xfs':
+                $optadd = ['usrquota', 'grpquota'];
+                break;
+        }
         $optsm = array_merge($optst, $optadd);
         $optsu = array_unique($optsm);
         $optsf = implode(',', array_filter($optsu));
@@ -130,7 +137,8 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $opts = explode(',', $object->get('opts'));
         $optst = array_map('trim', $opts);
         $optsu = array_unique($optst);
-        $optremove = ['usrjquota=aquota.user', 'grpjquota=aquota.group', 'jqfmt=vfsv0'];
+        $optremove = ['usrjquota=aquota.user', 'grpjquota=aquota.group',
+            'jqfmt=vfsv0', 'usrquota', 'grpquota'];
         $optsd = array_diff($optsu, $optremove);
         $optsf = implode(',', array_filter($optsd));
         if (strlen($optsf) < 1) {
