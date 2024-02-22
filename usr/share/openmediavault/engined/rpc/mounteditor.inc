@@ -186,6 +186,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         $db = \OMV\Config\Database::getInstance();
         $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
+        $mntpt = $object->get("dir");
         $opts = explode(',', $object->get('opts'));
         $optst = array_map('trim', $opts);
         $optsu = array_unique($optst);
@@ -198,6 +199,16 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         }
         $object->set('opts', $optsf);
         $db->set($object);
+        // remove aquota files
+        $cmdArgs = [];
+        $cmdArgs[] = 'rm';
+        $cmdArgs[] = '-f';
+        $cmdArgs[] = sprintf('"%s/aquota.user"', $mntpt);
+        $cmdArgs[] = sprintf('"%s/aquota.group"', $mntpt);
+        $cmd = new \OMV\System\Process($cmdArgs);
+        $cmd->setQuiet(true);
+        $output = [];
+        $cmd->execute($output, $exitStatus);
         // Return the configuration object.
         return $object->getAssoc();
     }
