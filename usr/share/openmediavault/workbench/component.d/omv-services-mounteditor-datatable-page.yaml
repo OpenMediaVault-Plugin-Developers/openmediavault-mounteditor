@@ -20,10 +20,19 @@ data:
         prop: dir
         flexGrow: 3
         sortable: true
+        cellTemplateName: copyToClipboard
       - name: _('Mount Options')
+        prop: opts
+        flexGrow: 2
+        sortable: true
+        cellTemplateName: chip
+        cellTemplateConfig:
+          separator: ','
+      - name: _('Mount Options 2')
         prop: opts
         flexGrow: 4
         sortable: true
+        hidden: true
       - name: _('Type')
         prop: type
         flexGrow: 1
@@ -31,11 +40,22 @@ data:
         cellTemplateName: chip
         cellTemplateConfig:
           template: '{{ type | upper }}'
+      - name: _('References')
+        prop: references
+        flexGrow: 1
+        sortable: true
+      - name: _('Mounted')
+        prop: mounted
+        flexGrow: 1
+        sortable: true
+        cellTemplateName: checkIcon
       - name: _('Comment')
         prop: comment
         flexGrow: 1
         sortable: true
-        hidden: true
+        cellTemplateName: chip
+        cellTemplateConfig:
+          separator: ','
     actions:
       - template: edit
         execute:
@@ -82,9 +102,6 @@ data:
       - type: iconButton
         icon: mdi:file-document-outline
         tooltip: _("Live options")
-        enabledConstraints:
-          minSelected: 1
-          maxSelected: 1
         execute:
           type: taskDialog
           taskDialog:
@@ -96,3 +113,36 @@ data:
                 method: show
                 params:
                   uuid: "{{ _selected[0].uuid }}"
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+          constraint:
+            - operator: truthy
+              arg0:
+                prop: mounted
+      - type: iconButton
+        icon: delete
+        tooltip: _("Delete orphaned entry")
+        confirmationDialogConfig:
+          template: confirmation-danger
+          message: _("Are you sure you want to delete the orphaned entry?")
+        execute:
+          type: request
+          request:
+            service: MountEditor
+            method: delete
+            params:
+              uuid: "{{ _selected[0].uuid }}"
+            progressMessage: _("Deleting orphaned entry ...")
+            successNotification: _("Orphaned entry has been deleted.")
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+          constraint:
+            - operator: eq
+              arg0:
+                prop: references
+              arg1: 0
+            - operator: falsy
+              arg0:
+                prop: mounted

@@ -28,6 +28,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('list');
         $this->registerMethod('get');
         $this->registerMethod('set');
+        $this->registerMethod('delete');
 
         $this->registerMethod('addQuota');
         $this->registerMethod('removeQuota');
@@ -43,7 +44,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->getByFilterAssoc('conf.system.filesystem.mountpoint', [
+        $objects = $db->getByFilter('conf.system.filesystem.mountpoint', [
             "operator" => "and",
             "arg0" => [
                 'operator' => 'stringNotEquals',
@@ -67,8 +68,40 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
                 ]
             ]
         ]);
+        // Add additional mount informations
+        $objectsAssoc = [];
+        foreach ($objects as $objectk => &$objectv) {
+            // Add the new properties
+            $objectv->add("references", "integer", 0);
+            $objectv->add("mounted", "boolean", false);
+            // get count of uuid in database to determine if referenced
+            $cmdArgs = [];
+            $cmdArgs[] = 'grep';
+            $cmdArgs[] = '-c';
+            $cmdArgs[] = sprintf('"%s"', $objectv->get("uuid"));
+            $cmdArgs[] = '/etc/openmediavault/config.xml';
+            $cmd = new \OMV\System\Process($cmdArgs);
+            $cmd->setQuiet(true);
+            $output = [];
+            $cmd->execute($output, $exitStatus);
+            $refs = intval($output[0]);
+            if ($refs > 0) $objectv->set("references", ($refs - 1));
+            // check /proc/mounts to see if mounted
+            $cmdArgs = [];
+            $cmdArgs[] = 'grep';
+            $cmdArgs[] = '-qw';
+            $cmdArgs[] = sprintf('"%s"', $objectv->get("dir"));
+            $cmdArgs[] = '/proc/mounts';
+            $cmd = new \OMV\System\Process($cmdArgs);
+            $cmd->setQuiet(true);
+            $output = [];
+            $cmd->execute($output, $exitStatus);
+            if ($exitStatus == 0) $objectv->set("mounted", true);
+            // add to list
+            $objectsAssoc[] = $objectv->getAssoc();
+        }
         // Filter the result.
-        return $this->applyFilter($objects, $params['start'], $params['limit'],
+        return $this->applyFilter($objectsAssoc, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
     }
 
@@ -99,6 +132,20 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $object->set('opts', $optsf);
         $db->set($object);
         // Return the configuration object.
+        return $object->getAssoc();
+    }
+
+    public function delete($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
+        // Delete the configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get("conf.system.filesystem.mountpoint", $params['uuid']);
+        $db->delete($object);
+        // Return the deleted configuration object.
         return $object->getAssoc();
     }
 
