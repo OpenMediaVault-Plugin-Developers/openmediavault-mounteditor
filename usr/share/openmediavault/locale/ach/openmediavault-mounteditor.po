@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-mounteditor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-mounteditor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-24 10:52-0600\n"
+"PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Language-Team: Acoli (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/ach/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ach\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Add quota options"
+msgstr ""
+
+msgid "Adding quota options ..."
+msgstr ""
+
+msgid "Are you sure you want to change the mount options?"
+msgstr ""
+
+msgid "Are you sure you want to delete the orphaned entry?"
+msgstr ""
+
+msgid "Are you sure you want to remove quota options?"
+msgstr ""
+
+msgid ""
+"Be very careful removing or changing options.<br/>These options are not the "
+"live options but what is stored in the database.<br/>Bad options could cause"
+" the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
+"apply new mount options."
+msgstr ""
+
+msgid "Current database options:"
+msgstr ""
+
+msgid "Delete orphaned entry"
+msgstr ""
+
+msgid "Deleting orphaned entry ..."
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid ""
+"It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
+"mount options - <a href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>link<a/><br/>xfs mount options - <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>link<a/><br/>btrfs mount options - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
+msgstr ""
+
+msgid "Live options"
+msgstr ""
+
+msgid "Live options:"
+msgstr ""
+
+msgid "Mount Editor"
+msgstr ""
+
+msgid "Mount options"
+msgstr ""
+
+msgid "Mount point"
+msgstr ""
+
+msgid ""
+"NOTE: Live options will typically not match because some options are "
+"expanded when mounted."
+msgstr ""
+
+msgid "Orphaned entry has been deleted."
+msgstr ""
+
+msgid "Quota options have been added."
+msgstr ""
+
+msgid "Quota options have been removed."
+msgstr ""
+
+msgid "Remove quota options"
+msgstr ""
+
+msgid "Removing quota options ..."
+msgstr ""
+
+msgid "The mount must have at least one mount option!"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Updated mount."
+msgstr ""
