@@ -1,3 +1,9 @@
+openmediavault-mounteditor (7.0.1) stable; urgency=low
+
+  * Improve remove quota option
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 26 Feb 2024 19:05:10 -0600
+
 openmediavault-mounteditor (7.0) stable; urgency=low
 
   * Initial release
