@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-mounteditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 10:52-0600\n"
+"POT-Creation-Date: 2024-02-26 19:05-0600\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
 "Language-Team: Arabic (Saudi Arabia) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/ar_SA/)\n"
 "MIME-Version: 1.0\n"
@@ -81,6 +81,9 @@ msgid ""
 msgstr ""
 
 msgid "Orphaned entry has been deleted."
+msgstr ""
+
+msgid "Path:"
 msgstr ""
 
 msgid "Quota options have been added."

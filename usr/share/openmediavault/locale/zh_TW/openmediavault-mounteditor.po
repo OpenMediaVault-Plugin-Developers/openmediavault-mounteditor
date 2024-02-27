@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the openmediavault-mounteditor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# kochin <kochinc@outlook.com>, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-mounteditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 10:52-0600\n"
+"POT-Creation-Date: 2024-02-26 19:05-0600\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,19 +22,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add quota options"
-msgstr ""
+msgstr "增加配額選項"
 
 msgid "Adding quota options ..."
-msgstr ""
+msgstr "增加配額選項中 ..."
 
 msgid "Are you sure you want to change the mount options?"
-msgstr ""
+msgstr "您確定要變更掛載選項嗎？"
 
 msgid "Are you sure you want to delete the orphaned entry?"
-msgstr ""
+msgstr "您確定要刪除孤兒項目嗎？"
 
 msgid "Are you sure you want to remove quota options?"
-msgstr ""
+msgstr "您確定要移除配額選項嗎？"
 
 msgid ""
 "Be very careful removing or changing options.<br/>These options are not the "
@@ -38,18 +42,19 @@ msgid ""
 " the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
 "apply new mount options."
 msgstr ""
+"移除或變更選項要十分小心。<br/>這些選項並非實際的選項，而是儲存在資料庫中的內容。<br/>不良的選項可能造成檔案系統無法掛載或資料損失！<br/>可能需要重新啟動才會套用新的掛載選項。"
 
 msgid "Current database options:"
-msgstr ""
+msgstr "目前的資料庫選項："
 
 msgid "Delete orphaned entry"
-msgstr ""
+msgstr "刪除孤兒項目"
 
 msgid "Deleting orphaned entry ..."
-msgstr ""
+msgstr "刪除孤兒項目中 ..."
 
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 msgid ""
 "It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
@@ -59,47 +64,55 @@ msgid ""
 "target='_blank'>link<a/><br/>btrfs mount options - <a "
 "href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 msgstr ""
+"建議將 default,nofail 做為第一選項。<br/>ext4 掛載選項 - <a "
+"href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>連結<a/><br/>xfs 掛載選項 - <a href='https://man7.org/linux/man-"
+"pages/man5/xfs.5.html' target='_blank'>連結<a/><br/>btrfs 掛載選項 - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>連結</a>"
 
 msgid "Live options"
-msgstr ""
+msgstr "實際選項"
 
 msgid "Live options:"
-msgstr ""
+msgstr "實際選項："
 
 msgid "Mount Editor"
-msgstr ""
+msgstr "掛載編輯器"
 
 msgid "Mount options"
-msgstr ""
+msgstr "掛載選項"
 
 msgid "Mount point"
-msgstr ""
+msgstr "掛載點"
 
 msgid ""
 "NOTE: Live options will typically not match because some options are "
 "expanded when mounted."
-msgstr ""
+msgstr "附註：實際選項通常將會不相符，這原因是在掛載時某些選項被擴展開來了。"
 
 msgid "Orphaned entry has been deleted."
+msgstr "孤兒項目已被刪除。"
+
+msgid "Path:"
 msgstr ""
 
 msgid "Quota options have been added."
-msgstr ""
+msgstr "配額選項已被加入。"
 
 msgid "Quota options have been removed."
-msgstr ""
+msgstr "配額選項已被移除。"
 
 msgid "Remove quota options"
-msgstr ""
+msgstr "移除配額選項"
 
 msgid "Removing quota options ..."
-msgstr ""
+msgstr "移除配額選項中 ..."
 
 msgid "The mount must have at least one mount option!"
-msgstr ""
+msgstr "掛載必須至少有一個掛載選項！"
 
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 msgid "Updated mount."
-msgstr ""
+msgstr "已更新的掛載。"

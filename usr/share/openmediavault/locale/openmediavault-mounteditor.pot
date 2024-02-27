@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-mounteditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 10:52-0600\n"
+"POT-Creation-Date: 2024-02-26 19:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,9 @@ msgid "NOTE: Live options will typically not match because some options are expa
 msgstr ""
 
 msgid "Orphaned entry has been deleted."
+msgstr ""
+
+msgid "Path:"
 msgstr ""
 
 msgid "Quota options have been added."
