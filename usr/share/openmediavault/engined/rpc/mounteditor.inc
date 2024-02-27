@@ -45,25 +45,25 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
         $objects = $db->getByFilter('conf.system.filesystem.mountpoint', [
-            "operator" => "and",
-            "arg0" => [
+            'operator' => 'and',
+            'arg0' => [
                 'operator' => 'stringNotEquals',
                 'arg0' => 'hidden',
                 'arg1' => '1'
             ],
-            "arg1" => [
-                "operator" => "not",
-                "arg0" => [
-                    "operator" => "or",
-                    "arg0" => [
-                        "operator" => "stringContains",
-                        "arg0" => "opts",
-                        "arg1" => "bind"
+            'arg1' => [
+                'operator' => 'not',
+                'arg0' => [
+                    'operator' => 'or',
+                    'arg0' => [
+                        'operator' => 'stringContains',
+                        'arg0' => 'opts',
+                        'arg1' => 'bind'
                     ],
-                    "arg1" => [
-                        "operator" => "stringContains",
-                        "arg0" => "opts",
-                        "arg1" => "loop"
+                    'arg1' => [
+                        'operator' => 'stringContains',
+                        'arg0' => 'opts',
+                        'arg1' => 'loop'
                     ]
                 ]
             ]
@@ -72,31 +72,31 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $objectsAssoc = [];
         foreach ($objects as $objectk => &$objectv) {
             // Add the new properties
-            $objectv->add("references", "integer", 0);
-            $objectv->add("mounted", "boolean", false);
+            $objectv->add('references', 'integer', 0);
+            $objectv->add('mounted', 'boolean', false);
             // get count of uuid in database to determine if referenced
             $cmdArgs = [];
             $cmdArgs[] = 'grep';
             $cmdArgs[] = '-c';
-            $cmdArgs[] = sprintf('"%s"', $objectv->get("uuid"));
+            $cmdArgs[] = sprintf('"%s"', $objectv->get('uuid'));
             $cmdArgs[] = '/etc/openmediavault/config.xml';
             $cmd = new \OMV\System\Process($cmdArgs);
             $cmd->setQuiet(true);
             $output = [];
             $cmd->execute($output, $exitStatus);
             $refs = intval($output[0]);
-            if ($refs > 0) $objectv->set("references", ($refs - 1));
+            if ($refs > 0) $objectv->set('references', ($refs - 1));
             // check /proc/mounts to see if mounted
             $cmdArgs = [];
             $cmdArgs[] = 'grep';
             $cmdArgs[] = '-qw';
-            $cmdArgs[] = sprintf('"%s"', $objectv->get("dir"));
+            $cmdArgs[] = sprintf('"%s"', $objectv->get('dir'));
             $cmdArgs[] = '/proc/mounts';
             $cmd = new \OMV\System\Process($cmdArgs);
             $cmd->setQuiet(true);
             $output = [];
             $cmd->execute($output, $exitStatus);
-            if ($exitStatus == 0) $objectv->set("mounted", true);
+            if ($exitStatus == 0) $objectv->set('mounted', true);
             // add to list
             $objectsAssoc[] = $objectv->getAssoc();
         }
@@ -143,7 +143,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.system.filesystem.mountpoint", $params['uuid']);
+        $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
         $db->delete($object);
         // Return the deleted configuration object.
         return $object->getAssoc();
@@ -186,7 +186,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         $db = \OMV\Config\Database::getInstance();
         $object = $db->get('conf.system.filesystem.mountpoint', $params['uuid']);
-        $mntpt = $object->get("dir");
+        $mntpt = $object->get('dir');
         $opts = explode(',', $object->get('opts'));
         $optst = array_map('trim', $opts);
         $optsu = array_unique($optst);
@@ -199,6 +199,20 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         }
         $object->set('opts', $optsf);
         $db->set($object);
+        // Apply changes immmediately
+        \OMV\Rpc\Rpc::call('Config', 'applyChanges', [
+            'modules' => [ 'fstab', 'monit' ],
+            'force' => TRUE
+        ], $context);
+        // try to remount the mountpoint
+        $cmdArgs = [];
+        $cmdArgs[] = 'mount';
+        $cmdArgs[] = '-o remount';
+        $cmdArgs[] = sprintf('"%s"', $mntpt);
+        $cmd = new \OMV\System\Process($cmdArgs);
+        $cmd->setQuiet(true);
+        $output = [];
+        $cmd->execute($output, $exitStatus);
         // remove aquota files
         $cmdArgs = [];
         $cmdArgs[] = 'rm';
@@ -224,8 +238,11 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
                 $msg = gettext("NOTE: Live options will typically not match because some options are expanded when mounted.");
                 $msg .= PHP_EOL . PHP_EOL;
                 file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
+                $msg = gettext("Path:");
+                $msg .= PHP_EOL . '  ' . $object->get('dir') . PHP_EOL . PHP_EOL;
+                file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
                 $msg = gettext("Current database options:");
-                $msg .= PHP_EOL . '  ' . $object->get("opts") . PHP_EOL . PHP_EOL;
+                $msg .= PHP_EOL . '  ' . $object->get('opts') . PHP_EOL . PHP_EOL;
                 file_put_contents($bgOutputFilename, $msg, FILE_APPEND);
                 $msg = gettext("Live options:");
                 $msg .= PHP_EOL . '  ';
