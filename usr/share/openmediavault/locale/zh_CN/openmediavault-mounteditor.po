@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the openmediavault-mounteditor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# songming <by@songming.me>, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-26 19:05-0600\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Last-Translator: songming <by@songming.me>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,19 +22,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add quota options"
-msgstr ""
+msgstr "添加配额选项"
 
 msgid "Adding quota options ..."
-msgstr ""
+msgstr "添加配额选项中 ..."
 
 msgid "Are you sure you want to change the mount options?"
-msgstr ""
+msgstr "您确定要改变挂载选项吗？"
 
 msgid "Are you sure you want to delete the orphaned entry?"
-msgstr ""
+msgstr "您确定要删除孤立选项？"
 
 msgid "Are you sure you want to remove quota options?"
-msgstr ""
+msgstr "您确定要移除配额选项？"
 
 msgid ""
 "Be very careful removing or changing options.<br/>These options are not the "
@@ -38,18 +42,19 @@ msgid ""
 " the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
 "apply new mount options."
 msgstr ""
+"移除或改变选项要非常小心。<br/>这些选项不是实时的，是存储在数据库中的。<br/>错误的选项会导致文件系统挂载失败或丢失数据！<br/>有的挂载选项需要重启才会生效。"
 
 msgid "Current database options:"
-msgstr ""
+msgstr "当前数据库选项："
 
 msgid "Delete orphaned entry"
-msgstr ""
+msgstr "删除孤立选项"
 
 msgid "Deleting orphaned entry ..."
-msgstr ""
+msgstr "删除孤立选项中 ..."
 
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 msgid ""
 "It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
@@ -59,50 +64,55 @@ msgid ""
 "target='_blank'>link<a/><br/>btrfs mount options - <a "
 "href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 msgstr ""
+"建议首先使用默认选项。<br/>ext4 挂载选项 -<a href='https://man7.org/linux/man-"
+"pages/man5/ext4.5.html' target='_blank'>link<a/><br/>xfs挂载选项 - <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>link<a/><br/>btrfs 挂载选项 - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 
 msgid "Live options"
-msgstr ""
+msgstr "实时选项"
 
 msgid "Live options:"
-msgstr ""
+msgstr "实时选项"
 
 msgid "Mount Editor"
-msgstr ""
+msgstr "挂载编辑器"
 
 msgid "Mount options"
-msgstr ""
+msgstr "挂载选项"
 
 msgid "Mount point"
-msgstr ""
+msgstr "挂载点"
 
 msgid ""
 "NOTE: Live options will typically not match because some options are "
 "expanded when mounted."
-msgstr ""
+msgstr "说明：实时选项通常不匹配因为一些挂载选项在挂载时会扩展。"
 
 msgid "Orphaned entry has been deleted."
-msgstr ""
+msgstr "孤立选项已删除。"
 
 msgid "Path:"
-msgstr ""
+msgstr "路径："
 
 msgid "Quota options have been added."
-msgstr ""
+msgstr "配额选项已添加。"
 
 msgid "Quota options have been removed."
-msgstr ""
+msgstr "配额选项已移除。"
 
 msgid "Remove quota options"
-msgstr ""
+msgstr "移除配额选项"
 
 msgid "Removing quota options ..."
-msgstr ""
+msgstr "移除配额选项中 ..."
 
 msgid "The mount must have at least one mount option!"
-msgstr ""
+msgstr "挂载必须至少有一个挂载选项！"
 
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 msgid "Updated mount."
-msgstr ""
+msgstr "更新挂载。"

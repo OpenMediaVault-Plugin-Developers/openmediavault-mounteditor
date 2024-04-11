@@ -94,7 +94,7 @@ msgid "Orphaned entry has been deleted."
 msgstr "孤兒項目已被刪除。"
 
 msgid "Path:"
-msgstr ""
+msgstr "路徑："
 
 msgid "Quota options have been added."
 msgstr "配額選項已被加入。"

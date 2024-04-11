@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the openmediavault-mounteditor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,27 +13,28 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-26 19:05-0600\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
-"Language-Team: Spanish (Spain) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/es_ES/)\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>, 2024\n"
+"Language-Team: Spanish (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
+"Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Add quota options"
-msgstr ""
+msgstr "Añadir la opción de cuota"
 
 msgid "Adding quota options ..."
-msgstr ""
+msgstr "Añadiendo opción de cuota..."
 
 msgid "Are you sure you want to change the mount options?"
-msgstr ""
+msgstr "¿Estas seguro de que deseas cambiar las opciones de montaje?"
 
 msgid "Are you sure you want to delete the orphaned entry?"
-msgstr ""
+msgstr "¿estas seguro de que deseas borrar la entrada huérfana?"
 
 msgid "Are you sure you want to remove quota options?"
-msgstr ""
+msgstr "¿Estas seguro que deseas eliminar la opción de cuotas?"
 
 msgid ""
 "Be very careful removing or changing options.<br/>These options are not the "
@@ -38,18 +42,23 @@ msgid ""
 " the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
 "apply new mount options."
 msgstr ""
+"Tenga mucho cuidado al eliminar o cambiar opciones. <br/>Estas opciones no "
+"son las opciones activas sino lo que está almacenado en la base de datos. "
+"<br/>¡Una mala opción podría provocar que el sistema de archivos no se monte"
+" o se pierdan datos! <br/>Es posible que sea necesario reiniciar para "
+"aplicar nuevas opciones de montaje."
 
 msgid "Current database options:"
-msgstr ""
+msgstr "Opciones actuales de la BD:"
 
 msgid "Delete orphaned entry"
-msgstr ""
+msgstr "Borrar entrada huérfana"
 
 msgid "Deleting orphaned entry ..."
-msgstr ""
+msgstr "Borrando entrada huérfana ..."
 
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 msgid ""
 "It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
@@ -59,50 +68,58 @@ msgid ""
 "target='_blank'>link<a/><br/>btrfs mount options - <a "
 "href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 msgstr ""
+"Se recomienda dejar los valores predeterminados, nofail como las primeras "
+"opciones. <br/>opciones de montaje ext4 - <a "
+"href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>enlace<a/> <br/>xfs - <a href='https://man7.org/linux/man-"
+"pages/man5/xfs.5.html' target='_blank'>enlace<a/> <br/>btrfs - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>enlace</a>"
 
 msgid "Live options"
-msgstr ""
+msgstr "Opciones en Vivo"
 
 msgid "Live options:"
-msgstr ""
+msgstr "Opciones en Vivo:"
 
 msgid "Mount Editor"
-msgstr ""
+msgstr "Editor de montaje"
 
 msgid "Mount options"
-msgstr ""
+msgstr "Opciones de montaje"
 
 msgid "Mount point"
-msgstr ""
+msgstr "Punto de montaje"
 
 msgid ""
 "NOTE: Live options will typically not match because some options are "
 "expanded when mounted."
 msgstr ""
+"NOTA: Las opciones en vivo normalmente no coincidirán porque algunas "
+"opciones se expanden cuando se montan."
 
 msgid "Orphaned entry has been deleted."
-msgstr ""
+msgstr "La entrada huérfana ha sido borrada."
 
 msgid "Path:"
-msgstr ""
+msgstr "Ruta:"
 
 msgid "Quota options have been added."
-msgstr ""
+msgstr "La opción de Cuota ha sido añadida."
 
 msgid "Quota options have been removed."
-msgstr ""
+msgstr "La opción de Cuota ha sido borrada."
 
 msgid "Remove quota options"
-msgstr ""
+msgstr "Eliminar Cuota"
 
 msgid "Removing quota options ..."
-msgstr ""
+msgstr "Eliminando Cuota ..."
 
 msgid "The mount must have at least one mount option!"
-msgstr ""
+msgstr "El montaje debe tener al menos una opción!"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgid "Updated mount."
-msgstr ""
+msgstr "Actualizar montaje."
