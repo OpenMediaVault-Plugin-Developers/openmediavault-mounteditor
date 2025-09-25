@@ -191,7 +191,7 @@ class OMVRpcServiceMountEditor extends \OMV\Rpc\ServiceAbstract
         $optst = array_map('trim', $opts);
         $optsu = array_unique($optst);
         $optremove = ['usrjquota=aquota.user', 'grpjquota=aquota.group',
-            'jqfmt=vfsv0', 'usrquota', 'grpquota'];
+            'jqfmt=vfsv0', 'jqfmt=vfsv1', 'usrquota', 'grpquota'];
         $optsd = array_diff($optsu, $optremove);
         $optsf = implode(',', array_filter($optsd));
         if (strlen($optsf) < 1) {
