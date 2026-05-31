@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the openmediavault-mounteditor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Asdfgr Wertyu, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-mounteditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 19:05-0600\n"
+"POT-Creation-Date: 2026-05-31 01:24+0000\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Last-Translator: Asdfgr Wertyu, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,19 +22,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Add quota options"
-msgstr ""
+msgstr "Добавить параметры квоты"
 
 msgid "Adding quota options ..."
-msgstr ""
+msgstr "Добавление параметров квоты ..."
 
 msgid "Are you sure you want to change the mount options?"
-msgstr ""
+msgstr "Вы уверены, что хотите изменить параметры монтирования?"
 
 msgid "Are you sure you want to delete the orphaned entry?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить осиротевшую запись?"
 
 msgid "Are you sure you want to remove quota options?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить параметры квоты?"
 
 msgid ""
 "Be very careful removing or changing options.<br/>These options are not the "
@@ -38,18 +42,23 @@ msgid ""
 " the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
 "apply new mount options."
 msgstr ""
+"Будьте очень осторожны, удаляя или изменяя параметры. <br/>Эти параметры не "
+"являются реальными, а хранятся в базе данных.<br/> Неправильные параметры "
+"могут привести к отказу монтирования файловой системы или потере данных! "
+"<br/>Для применения новых параметров монтирования может потребоваться "
+"перезагрузка."
 
 msgid "Current database options:"
-msgstr ""
+msgstr "Текущие параметры базы данных:"
 
 msgid "Delete orphaned entry"
-msgstr ""
+msgstr "Удаление осиротевшей записи"
 
 msgid "Deleting orphaned entry ..."
-msgstr ""
+msgstr "Удаление осиротевшей записи ..."
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid ""
 "It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
@@ -59,50 +68,58 @@ msgid ""
 "target='_blank'>link<a/><br/>btrfs mount options - <a "
 "href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 msgstr ""
+"В качестве первых опций рекомендуется оставить defaults,nofail.<br/>ext4 "
+"mount options - <a href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>link<a/><br/>xfs mount options - <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>link<a/><br/>btrfs mount options - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 
 msgid "Live options"
-msgstr ""
+msgstr "Живые опционы"
 
 msgid "Live options:"
-msgstr ""
+msgstr "Живые опции:"
 
 msgid "Mount Editor"
-msgstr ""
+msgstr "Монтажный редактор"
 
 msgid "Mount options"
-msgstr ""
+msgstr "Варианты монтажа"
 
 msgid "Mount point"
-msgstr ""
+msgstr "Точка монтажа"
 
 msgid ""
 "NOTE: Live options will typically not match because some options are "
 "expanded when mounted."
 msgstr ""
+"ПРИМЕЧАНИЕ: Параметры в реальном времени обычно не совпадают, поскольку "
+"некоторые параметры расширяются при монтировании."
 
 msgid "Orphaned entry has been deleted."
-msgstr ""
+msgstr "Осиротевшая запись была удалена."
 
 msgid "Path:"
-msgstr ""
+msgstr "Путь:"
 
 msgid "Quota options have been added."
-msgstr ""
+msgstr "Добавлены опции квотирования."
 
 msgid "Quota options have been removed."
-msgstr ""
+msgstr "Опции квотирования были удалены."
 
 msgid "Remove quota options"
-msgstr ""
+msgstr "Удалить параметры квоты"
 
 msgid "Removing quota options ..."
-msgstr ""
+msgstr "Удаление опций квоты ..."
 
 msgid "The mount must have at least one mount option!"
-msgstr ""
+msgstr "У монтируемого объекта должна быть хотя бы одна опция монтирования!"
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Updated mount."
-msgstr ""
+msgstr "Обновленное монтирование."

@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the openmediavault-mounteditor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-mounteditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 19:05-0600\n"
+"POT-Creation-Date: 2026-05-31 01:24+0000\n"
 "PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Last-Translator: Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024\n"
 "Language-Team: Hungarian (Hungary) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,19 +22,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add quota options"
-msgstr ""
+msgstr "Kvótabeállítások hozzáadása"
 
 msgid "Adding quota options ..."
-msgstr ""
+msgstr "Kvótabeállítások hozzáadása…"
 
 msgid "Are you sure you want to change the mount options?"
-msgstr ""
+msgstr "Biztos, hogy meg szeretné változtatni a csatolási beállításokat?"
 
 msgid "Are you sure you want to delete the orphaned entry?"
-msgstr ""
+msgstr "Biztos, hogy törölni kívánja az árva bejegyzéseket?"
 
 msgid "Are you sure you want to remove quota options?"
-msgstr ""
+msgstr "Biztos, hogy el szeretné távolítani a kvóta beállításokat?"
 
 msgid ""
 "Be very careful removing or changing options.<br/>These options are not the "
@@ -38,18 +42,23 @@ msgid ""
 " the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
 "apply new mount options."
 msgstr ""
+"Legyen nagyon óvatos a beállítások eltávolításával vagy "
+"módosításával.<br/>Ezek a beállítások nem az élő beállítások, hanem az "
+"adatbázisban tároltak.<br/>A rossz beállítások a fájlrendszer csatolásának "
+"sikertelenségét vagy adatvesztést okozhatnak!<br/>Az új csatolási "
+"beállítások alkalmazásához újraindításra lehet szükség."
 
 msgid "Current database options:"
-msgstr ""
+msgstr "Jelenlegi adatbázis-opciók:"
 
 msgid "Delete orphaned entry"
-msgstr ""
+msgstr "Árva bejegyzés törlése"
 
 msgid "Deleting orphaned entry ..."
-msgstr ""
+msgstr "Árva bejegyzés törlése…"
 
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 msgid ""
 "It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
@@ -59,50 +68,58 @@ msgid ""
 "target='_blank'>link<a/><br/>btrfs mount options - <a "
 "href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 msgstr ""
+"Javasolt az első beállításokat meghagyni: <br/>ext4 csatolási beállítások – "
+"<a href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>link<a/><br/>xfs csatolási beállítások – <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>link<a/><br/>btrfs csatolási beállítások – <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
 
 msgid "Live options"
-msgstr ""
+msgstr "Élő beállítások"
 
 msgid "Live options:"
-msgstr ""
+msgstr "Élő beállítások:"
 
 msgid "Mount Editor"
-msgstr ""
+msgstr "Csatolásszerkesztő"
 
 msgid "Mount options"
-msgstr ""
+msgstr "Csatolási beálítások"
 
 msgid "Mount point"
-msgstr ""
+msgstr "Csatolási pont"
 
 msgid ""
 "NOTE: Live options will typically not match because some options are "
 "expanded when mounted."
 msgstr ""
+"MEGJEGYZÉS: Az élő beállítások jellemzően nem egyeznek meg, mivel egyes "
+"beállítások csatoláskor kibővülnek. "
 
 msgid "Orphaned entry has been deleted."
-msgstr ""
+msgstr "Az árva bejegyzés törölve lett."
 
 msgid "Path:"
-msgstr ""
+msgstr "Útvonal:"
 
 msgid "Quota options have been added."
-msgstr ""
+msgstr "A kvótabeállítások hozzá lettek adva."
 
 msgid "Quota options have been removed."
-msgstr ""
+msgstr "A kvótabeállítások el lettek távolítva."
 
 msgid "Remove quota options"
-msgstr ""
+msgstr "Kvóta beállítások eltávolítása"
 
 msgid "Removing quota options ..."
-msgstr ""
+msgstr "Kvóta beállítások eltávolítása…"
 
 msgid "The mount must have at least one mount option!"
-msgstr ""
+msgstr "A csatolásnak legalább egy csatolási beállításssal kell rendelkeznie!"
 
 msgid "Type"
-msgstr ""
+msgstr "Típus"
 
 msgid "Updated mount."
-msgstr ""
+msgstr "Frissített csatolás."

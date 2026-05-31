@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-mounteditor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# BoneNI, 2026
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-mounteditor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-31 01:24+0000\n"
+"PO-Revision-Date: 2024-02-24 16:55+0000\n"
+"Last-Translator: BoneNI, 2026\n"
+"Language-Team: Lao (Laos) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/lo_LA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo_LA\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add quota options"
+msgstr "ເພີ່ມຕົວເລືອກໂຄຕ້າ"
+
+msgid "Adding quota options ..."
+msgstr "ກຳລັງເພີ່ມຕົວເລືອກໂຄຕ້າ ..."
+
+msgid "Are you sure you want to change the mount options?"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການປ່ຽນຕົວເລືອກການເມາທ໌ (mount)?"
+
+msgid "Are you sure you want to delete the orphaned entry?"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບລາຍການທີ່ຄ້າງຄາ (orphaned entry)?"
+
+msgid "Are you sure you want to remove quota options?"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບຕົວເລືອກໂຄຕ້າອອກ?"
+
+msgid ""
+"Be very careful removing or changing options.<br/>These options are not the "
+"live options but what is stored in the database.<br/>Bad options could cause"
+" the filesystem to not mount or data loss!<br/>A reboot may be necessary to "
+"apply new mount options."
+msgstr ""
+"ຂໍໃຫ້ລະມັດລະວັງຫຼາຍໃນການລຶບ ຫຼື "
+"ປ່ຽນຕົວເລືອກ.<br/>ຕົວເລືອກເຫຼົ່ານີ້ບໍ່ແມ່ນຕົວເລືອກທີ່ກຳລັງໃຊ້ງານຢູ່ (live "
+"options) "
+"ແຕ່ເປັນສິ່ງທີ່ຖືກຈັດເກັບໄວ້ໃນຖານຂໍ້ມູນ.<br/>ຕົວເລືອກທີ່ບໍ່ຖືກຕ້ອງອາດເຮັດໃຫ້ລະບົບໄຟລ໌ບໍ່ສາມາດເມາທ໌"
+" (mount) ໄດ້ ຫຼື ຂໍ້ມູນສູນຫາຍ!<br/>ອາດຈຳເປັນຕ້ອງໄດ້ມີການຣີບູດ (reboot) "
+"ເພື່ອນຳໃຊ້ຕົວເລືອກການເມາທ໌ໃໝ່."
+
+msgid "Current database options:"
+msgstr "ຕົວເລືອກໃນຖານຂໍ້ມູນປັດຈຸບັນ:"
+
+msgid "Delete orphaned entry"
+msgstr "ລຶບລາຍການທີ່ຄ້າງຄາ"
+
+msgid "Deleting orphaned entry ..."
+msgstr "ກຳລັງລຶບລາຍການທີ່ຄ້າງຄາ ..."
+
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
+
+msgid ""
+"It is recommended to leave defaults,nofail as the first options.<br/>ext4 "
+"mount options - <a href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>link<a/><br/>xfs mount options - <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>link<a/><br/>btrfs mount options - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>link</a>"
+msgstr ""
+"ແນະນຳໃຫ້ໃຊ້ defaults,nofail ເປັນຕົວເລືອກທຳອິດ.<br/>ຕົວເລືອກການເມາທ໌ ext4 - "
+"<a href='https://man7.org/linux/man-pages/man5/ext4.5.html' "
+"target='_blank'>ລິ້ງ<a/><br/>ຕົວເລືອກການເມາທ໌ xfs - <a "
+"href='https://man7.org/linux/man-pages/man5/xfs.5.html' "
+"target='_blank'>ລິ້ງ<a/><br/>ຕົວເລືອກການເມາທ໌ btrfs - <a "
+"href='https://manpages.org/btrfs-mount/5' target='_blank'>ລິ້ງ</a>"
+
+msgid "Live options"
+msgstr "ຕົວເລືອກທີ່ກຳລັງໃຊ້ງານຢູ່"
+
+msgid "Live options:"
+msgstr "ຕົວເລືອກທີ່ກຳລັງໃຊ້ງານຢູ່:"
+
+msgid "Mount Editor"
+msgstr "ເຄື່ອງມືແກ້ໄຂການເມາທ໌"
+
+msgid "Mount options"
+msgstr "ຕົວເລືອກການເມາທ໌"
+
+msgid "Mount point"
+msgstr "ຈຸດເມາທ໌ (Mount point)"
+
+msgid ""
+"NOTE: Live options will typically not match because some options are "
+"expanded when mounted."
+msgstr ""
+"ໝາຍເຫດ: ໂດຍທົ່ວໄປແລ້ວ ຕົວເລືອກທີ່ກຳລັງໃຊ້ງານຢູ່ (Live options) ຈະບໍ່ກົງກັນ "
+"ເພາະບາງຕົວເລືອກຈະຖືກຂະຫຍາຍອອກເມື່ອຖືກເມາທ໌."
+
+msgid "Orphaned entry has been deleted."
+msgstr "ລຶບລາຍການທີ່ຄ້າງຄາສຳເລັດແລ້ວ."
+
+msgid "Path:"
+msgstr "ເສັ້ນທາງ (Path):"
+
+msgid "Quota options have been added."
+msgstr "ເພີ່ມຕົວເລືອກໂຄຕ້າສຳເລັດແລ້ວ."
+
+msgid "Quota options have been removed."
+msgstr "ລຶບຕົວເລືອກໂຄຕ້າອອກສຳເລັດແລ້ວ."
+
+msgid "Remove quota options"
+msgstr "ລຶບຕົວເລືອກໂຄຕ້າອອກ"
+
+msgid "Removing quota options ..."
+msgstr "ກຳລັງລຶບຕົວເລືອກໂຄຕ້າອອກ ..."
+
+msgid "The mount must have at least one mount option!"
+msgstr "ການເມາທ໌ຕ້ອງມີຢ່າງໜ້ອຍໜຶ່ງຕົວເລືອກ!"
+
+msgid "Type"
+msgstr "ປະເພດ"
+
+msgid "Updated mount."
+msgstr "ອັບເດດການເມາທ໌ສຳເລັດແລ້ວ."
